@@ -21,3 +21,5 @@ RUN apk add --no-cache \
     build-base \
     libxslt-dev \
     openblas-dev
+
+RUN pip3 install cython lxml
