@@ -1,8 +1,10 @@
-FROM docker:stable
+FROM docker/compose:debian-1.27.4
 
 LABEL purpose="Image for gitlab worker with docker and docker-compose"
 LABEL maintainer="schweringmarc01@gmail.com"
 
-RUN apk add --no-cache py-pip curl && pip install docker-compose~=1.23.0
+RUN apt-get update && apt-get install -y \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
 
 CMD ["docker-compose", "--version"]
