@@ -13,3 +13,17 @@ docker tag "$MY_DOCKER_TAG:latest" "$MY_DOCKER_TAG:$SAM_VERSION"
 docker push "$MY_DOCKER_TAG:latest"
 docker push "$MY_DOCKER_TAG:$SAM_VERSION"
 ```
+
+choice 1 (quickstart templ)
+choice 1 (zip)
+choice 2 (py38)
+proj name sam-app
+choice 1 (hello world)
+rm -rf sam-app
+
+sam init \
+ --name test \
+ --package-type Zip \
+ --runtime python3.8 \
+ --dependency-manager pip \
+ --app-template hello-world
